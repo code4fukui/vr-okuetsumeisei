@@ -1,0 +1,22 @@
+<script type="module">
+import { cr, rgb, asset } from "https://js.sabae.cc/aframe.js";
+const scene = cr("a-scene");
+scene.setAttribute("renderer", "colorManagement: true;");
+document.body.appendChild(scene);
+
+const sky = cr("a-sky", scene);
+sky.setAttribute("src", "./room360.jpg");
+sky.setAttribute("radius", 10);
+
+// for pc
+const isQuest = navigator.userAgent.indexOf("Quest") >= 0;
+//const y = isQuest ? 1.2 : 1.53;
+const y = 0;
+const scale = isQuest ? 1 : 1;
+{
+  const obj = cr("a-entity", scene);
+  obj.setAttribute("gltf-model", "./monument.glb");
+  obj.setAttribute("position", { x: 0, y: 0, z: -2 });
+  obj.setAttribute("scale", { x: scale, y: scale, z: scale });
+}
+</script>
