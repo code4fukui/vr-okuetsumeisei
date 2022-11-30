@@ -1,0 +1,11 @@
+<script type="module">
+import { cr, rgb, asset } from "https://js.sabae.cc/aframe.js";
+const scene = cr("a-scene");
+scene.setAttribute("renderer", "colorManagement: true;");
+document.body.appendChild(scene);
+
+const sky = cr("a-sky", scene);
+sky.setAttribute("src", "./ai360.jpg");
+sky.setAttribute("radius", 20);
+sky.setAttribute("rotation", { x: 0, y: 100, z: 0 })
+</script>
